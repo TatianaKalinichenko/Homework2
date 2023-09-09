@@ -10,4 +10,6 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number < 0) number *= -1;
 
 int secondDigit = number / 10 % 10;
-Console.WriteLine($"Вторая цифра числа {number} -> {secondDigit}");
+
+if (number < 100 || number > 999) Console.WriteLine("Введенное число не трехзначное. Попробуйте еще раз.");
+else Console.WriteLine($"Вторая цифра -> {secondDigit}");
