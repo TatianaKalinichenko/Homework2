@@ -9,17 +9,19 @@
 Console.WriteLine("Введите пятизначное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-string result = PalindromCheck(num);
-if (result = "1")  Console.WriteLine("Число является палиндромом.");
-else Console.WriteLine("Число не является палиндромом.");
+if (num < 0) num = num * -1;
 
-string PalindromCheck(int number)
+
+bool palindrom = PalindromCheck(num);
+if (palindrom == true) Console.WriteLine("Это палиндром");
+else Console.WriteLine("Это не палиндром");
+
+bool PalindromCheck(int number)
 {
     int digit1 = number / 10000;
     int digit2 = number / 1000 % 10;
     int digit4 = number / 10 % 1000;
     int digit5 = number % 10000;
 
-    if (digit1 == digit5 && digit2 == digit4) return "1";
-    else return "0";
+    return digit1 == digit5 && digit2 == digit4;
 }
